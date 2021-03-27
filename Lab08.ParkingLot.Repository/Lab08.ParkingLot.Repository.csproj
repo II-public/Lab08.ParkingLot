@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lab08.ParkingLot.Data\Lab08.ParkingLot.Data.csproj" />
+    <ProjectReference Include="..\Lab08.ParkingLot.DTO\Lab08.ParkingLot.DTO.csproj" />
+  </ItemGroup>
+
+</Project>

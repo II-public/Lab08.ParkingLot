@@ -3,24 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08.ParkingLot", "Lab08.ParkingLot\Lab08.ParkingLot.csproj", "{9458CA5C-601E-42F3-B06B-0747D3011ED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08.ParkingLot", "Lab08.ParkingLot\Lab08.ParkingLot.csproj", "{9458CA5C-601E-42F3-B06B-0747D3011ED4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E6B2FE25-A5D6-4FE0-BA6C-BF953509D868}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08.ParkingLot.Data", "Lab08.ParkingLot.Data\Lab08.ParkingLot.Data.csproj", "{E500396E-977F-451C-9664-8C2D26811020}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08.ParkingLot.Data", "Lab08.ParkingLot.Data\Lab08.ParkingLot.Data.csproj", "{E500396E-977F-451C-9664-8C2D26811020}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08.ParkingLot.Enums", "Lab08.ParkingLot.Enums\Lab08.ParkingLot.Enums.csproj", "{8FD1832E-CACF-4307-AFD6-3B292282ECB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08.ParkingLot.Enums", "Lab08.ParkingLot.Enums\Lab08.ParkingLot.Enums.csproj", "{8FD1832E-CACF-4307-AFD6-3B292282ECB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08.ParkingLot.Extensions", "Lab08.ParkingLot.Extensions\Lab08.ParkingLot.Extensions.csproj", "{EF49726B-E22B-4D1E-B027-669A4E0AEEC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08.ParkingLot.Extensions", "Lab08.ParkingLot.Extensions\Lab08.ParkingLot.Extensions.csproj", "{EF49726B-E22B-4D1E-B027-669A4E0AEEC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08.ParkingLot.DTO", "Lab08.ParkingLot.DTO\Lab08.ParkingLot.DTO.csproj", "{DFDAFEE5-4C01-43C1-8B64-B349C9C9866D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08.ParkingLot.DTO", "Lab08.ParkingLot.DTO\Lab08.ParkingLot.DTO.csproj", "{DFDAFEE5-4C01-43C1-8B64-B349C9C9866D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08.ParkingLot.Repository", "Lab08.ParkingLot.Repository\Lab08.ParkingLot.Repository.csproj", "{CC91ADA6-7F60-4C9D-8E36-4B94CDBF3A6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08.ParkingLot.Repository", "Lab08.ParkingLot.Repository\Lab08.ParkingLot.Repository.csproj", "{CC91ADA6-7F60-4C9D-8E36-4B94CDBF3A6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08.ParkingLot.Service", "Lab08.ParkingLot.Service\Lab08.ParkingLot.Service.csproj", "{1438ECBC-697A-458B-876E-86B6E3EEF558}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08.ParkingLot.Service", "Lab08.ParkingLot.Service\Lab08.ParkingLot.Service.csproj", "{1438ECBC-697A-458B-876E-86B6E3EEF558}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08.ParkingLot.Tests", "Lab08.ParkingLot.Tests\Lab08.ParkingLot.Tests.csproj", "{361C0832-D39B-408A-9946-E0A05C909551}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{1438ECBC-697A-458B-876E-86B6E3EEF558}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1438ECBC-697A-458B-876E-86B6E3EEF558}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1438ECBC-697A-458B-876E-86B6E3EEF558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361C0832-D39B-408A-9946-E0A05C909551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361C0832-D39B-408A-9946-E0A05C909551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361C0832-D39B-408A-9946-E0A05C909551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361C0832-D39B-408A-9946-E0A05C909551}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

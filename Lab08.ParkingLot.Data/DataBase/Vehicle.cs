@@ -1,9 +1,10 @@
 ﻿using System;
+using Lab08.ParkingLot.Data.Interfaces;
 using Lab08.ParkingLot.Enums;
 
 namespace Lab08.ParkingLot.Data.DataBase
 {
-    public class Vehicle
+    public class Vehicle : IRelatedToDBContext
     {
         public int VehicleId { get; set; }
 

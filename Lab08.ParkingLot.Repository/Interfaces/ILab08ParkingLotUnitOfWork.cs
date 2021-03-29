@@ -1,8 +1,7 @@
-﻿using Lab08.ParkingLot.Data.Interfaces;
-
-namespace Lab08.ParkingLot.Repository.Interfaces
+﻿namespace Lab08.ParkingLot.Repository.Interfaces
 {
-    public interface ILab08ParkingLotUnitOfWork : IRepositoryBase<IRelatedToDBContext>
+    public interface ILab08ParkingLotUnitOfWork
     {
+        IVehicleRepository VehicleRepository { get; }
     }
 }

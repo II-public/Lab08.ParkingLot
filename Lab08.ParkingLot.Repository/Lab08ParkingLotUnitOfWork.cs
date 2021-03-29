@@ -1,15 +1,28 @@
 ﻿using Lab08.ParkingLot.Data.Context;
-using Lab08.ParkingLot.Data.Interfaces;
 using Lab08.ParkingLot.Repository.Interfaces;
 
 namespace Lab08.ParkingLot.Repository
 {
-    public class Lab08ParkingLotUnitOfWork : RepositoryBase<IRelatedToDBContext>, ILab08ParkingLotUnitOfWork
+    public class Lab08ParkingLotUnitOfWork : ILab08ParkingLotUnitOfWork
     {
         private readonly ParkingLotDBContext _parkingLotDBContext;
 
+        private IVehicleRepository _vehicleRepository;
+
+        public IVehicleRepository VehicleRepository
+        {
+            get
+            {
+                if (_vehicleRepository == null)
+                {
+                    _vehicleRepository = new VehicleRepository(_parkingLotDBContext);
+                }
+
+                return _vehicleRepository;
+            }
+        }
+
         public Lab08ParkingLotUnitOfWork(ParkingLotDBContext parkingLotDBContext)
-            : base(parkingLotDBContext)
         {
             _parkingLotDBContext = parkingLotDBContext;
         }

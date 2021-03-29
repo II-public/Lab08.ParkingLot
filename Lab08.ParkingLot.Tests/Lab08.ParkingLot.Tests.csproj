@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
@@ -14,6 +15,12 @@
 
   <ItemGroup>
     <Folder Include="ServicesTests\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lab08.ParkingLot.Repository\Lab08.ParkingLot.Repository.csproj" />
+    <ProjectReference Include="..\Lab08.ParkingLot.Service\Lab08.ParkingLot.Service.csproj" />
+    <ProjectReference Include="..\Lab08.ParkingLot\Lab08.ParkingLot.csproj" />
   </ItemGroup>
 
 </Project>

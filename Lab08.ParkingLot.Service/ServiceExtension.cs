@@ -18,7 +18,7 @@ namespace Lab08.ParkingLot.Service
         }
 
         /// <summary>
-        /// Configures the repository wrapper.
+        /// Configures the unit of work.
         /// </summary>
         /// <param name="services">The services.</param>
         public static void ConfigureUnitOfWork(this IServiceCollection services)

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Lab08.ParkingLot.Service.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Lab08.ParkingLot.Controllers
 {
@@ -6,12 +7,16 @@ namespace Lab08.ParkingLot.Controllers
     [Route("[controller]")]
     public class ParkingController : ControllerBase
     {
+        private readonly IRegisterService _registerService;
+
+        public ParkingController(IRegisterService registerService)
+        {
+            _registerService = registerService;
+        }
+
         [HttpGet]
         [Route(nameof(GetFreeSpaces))]
-        public IActionResult GetFreeSpaces()
-        {
-            return Ok();
-        }
+        public int GetFreeSpaces() => _registerService.GetFreeSpaces();
 
         [HttpGet]
         [Route(nameof(CalculateStayFee))]

@@ -10,10 +10,14 @@ namespace Lab08.ParkingLot.Controllers
     public class ParkingController : ControllerBase
     {
         private readonly IRegisterService _registerService;
+        private readonly ICalculatorService _calculatorService;
 
-        public ParkingController(IRegisterService registerService)
+        public ParkingController(
+            IRegisterService registerService,
+            ICalculatorService calculatorService)
         {
             _registerService = registerService;
+            _calculatorService = calculatorService;
         }
 
         [HttpGet]
@@ -22,9 +26,10 @@ namespace Lab08.ParkingLot.Controllers
 
         [HttpGet]
         [Route(nameof(CalculateStayFee))]
-        public IActionResult CalculateStayFee()
+        public VehicleCalculationResultModel CalculateStayFee(VehicleFeeCalculationDTO vehicleFeeCalculationDTO)
         {
-            return Ok();
+            VehicleCalculationResultModel result = _calculatorService.CalculateFee(vehicleFeeCalculationDTO);
+            return result;
         }
 
         [HttpGet]

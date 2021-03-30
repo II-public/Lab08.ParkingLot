@@ -13,6 +13,8 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
     public class GetFreeSpaces_Should
     {
         private Mock<ILab08ParkingLotUnitOfWork> _lab08ParkingLotUnitOfWork;
+        private Mock<IVehicleRatesService> _vehicleRatesService;
+        private ICalculatorService _calculatorService;
         private IRegisterService _registerService;
         private ParkingController _controller;
 
@@ -20,8 +22,12 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
         public void Setup()
         {
             _lab08ParkingLotUnitOfWork = new Mock<ILab08ParkingLotUnitOfWork>();
+            _vehicleRatesService = new Mock<IVehicleRatesService>();
+
             _registerService = new RegisterService(_lab08ParkingLotUnitOfWork.Object);
-            _controller = new ParkingController(_registerService);
+            _calculatorService = new CalculatorService(_lab08ParkingLotUnitOfWork.Object, _vehicleRatesService.Object);
+
+            _controller = new ParkingController(_registerService, _calculatorService);
         }
 
         [Test]

@@ -19,6 +19,8 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
     public class VehicleEntrance_Should
     {
         private Mock<ILab08ParkingLotUnitOfWork> _lab08ParkingLotUnitOfWork;
+        private Mock<IVehicleRatesService> _vehicleRatesService;
+        private ICalculatorService _calculatorService;
         private IRegisterService _registerService;
         private ParkingController _controller;
         private Fixture _fixture;
@@ -28,8 +30,12 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
         {
             // setup
             _lab08ParkingLotUnitOfWork = new Mock<ILab08ParkingLotUnitOfWork>();
+            _vehicleRatesService = new Mock<IVehicleRatesService>();
+
             _registerService = new RegisterService(_lab08ParkingLotUnitOfWork.Object);
-            _controller = new ParkingController(_registerService);
+            _calculatorService = new CalculatorService(_lab08ParkingLotUnitOfWork.Object, _vehicleRatesService.Object);
+
+            _controller = new ParkingController(_registerService, _calculatorService);
 
             _lab08ParkingLotUnitOfWork.Setup(r => r.VehicleRepository.Insert(It.IsAny<Vehicle>())).Verifiable();
 

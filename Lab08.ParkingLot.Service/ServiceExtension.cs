@@ -30,6 +30,7 @@ namespace Lab08.ParkingLot.Service
         {
             services.AddTransient<ICalculatorFactory, CalculatorFactory>();
             services.AddTransient<IRegisterService, RegisterService>();
+            services.AddTransient<IVehicleRatesService, VehicleRatesService>();
         }
     }
 }

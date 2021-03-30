@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lab08.ParkingLot.DTO\Lab08.ParkingLot.DTO.csproj" />
+    <ProjectReference Include="..\Lab08.ParkingLot.Model\Lab08.ParkingLot.Model.csproj" />
     <ProjectReference Include="..\Lab08.ParkingLot.Repository\Lab08.ParkingLot.Repository.csproj" />
   </ItemGroup>
 

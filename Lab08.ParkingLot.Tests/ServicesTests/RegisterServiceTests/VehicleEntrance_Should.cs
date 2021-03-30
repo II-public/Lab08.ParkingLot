@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoFixture;
-using Lab08.ParkingLot.Controllers;
 using Lab08.ParkingLot.Data.DataBase;
 using Lab08.ParkingLot.DTO;
 using Lab08.ParkingLot.Enums;
@@ -13,14 +12,12 @@ using Lab08.ParkingLot.Service.Interfaces;
 using Moq;
 using NUnit.Framework;
 
-
-namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
+namespace Lab08.ParkingLot.Tests.ServicesTests.RegisterServiceTests
 {
     public class VehicleEntrance_Should
     {
         private Mock<ILab08ParkingLotUnitOfWork> _lab08ParkingLotUnitOfWork;
         private IRegisterService _registerService;
-        private ParkingController _controller;
         private Fixture _fixture;
 
         [SetUp]
@@ -29,7 +26,6 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
             // setup
             _lab08ParkingLotUnitOfWork = new Mock<ILab08ParkingLotUnitOfWork>();
             _registerService = new RegisterService(_lab08ParkingLotUnitOfWork.Object);
-            _controller = new ParkingController(_registerService);
 
             _lab08ParkingLotUnitOfWork.Setup(r => r.VehicleRepository.Insert(It.IsAny<Vehicle>())).Verifiable();
 
@@ -48,7 +44,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
                 VehicleCategory = It.IsAny<VehicleCategory>()
             };
 
-            VehicleEntranceResultModel result = _controller.VehicleEntrance(vehicle);
+            VehicleEntranceResultModel result = _registerService.VehicleEntrance(vehicle);
 
             Assert.IsTrue(result.IsSuccessful);
         }
@@ -73,7 +69,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
                                   .With(v => v.VehicleCategory, VehicleCategory.B)
                                   .Create();
 
-            VehicleEntranceResultModel result = _controller.VehicleEntrance(vehicle);
+            VehicleEntranceResultModel result = _registerService.VehicleEntrance(vehicle);
 
             Assert.IsTrue(result.IsSuccessful);
         }
@@ -92,7 +88,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
                                   .With(v => v.VehicleCategory, VehicleCategory.C)
                                   .Create();
 
-            VehicleEntranceResultModel result = _controller.VehicleEntrance(vehicle);
+            VehicleEntranceResultModel result = _registerService.VehicleEntrance(vehicle);
 
             Assert.IsTrue(result.IsSuccessful);
         }
@@ -111,7 +107,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
                                   .With(v => v.VehicleCategory, VehicleCategory.B)
                                   .Create();
 
-            VehicleEntranceResultModel result = _controller.VehicleEntrance(vehicle);
+            VehicleEntranceResultModel result = _registerService.VehicleEntrance(vehicle);
 
             Assert.IsFalse(result.IsSuccessful);
         }
@@ -136,7 +132,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
                                   .With(v => v.VehicleCategory, VehicleCategory.B)
                                   .Create();
 
-            VehicleEntranceResultModel result = _controller.VehicleEntrance(vehicle);
+            VehicleEntranceResultModel result = _registerService.VehicleEntrance(vehicle);
 
             Assert.IsFalse(result.IsSuccessful);
         }
@@ -161,7 +157,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
                                   .With(v => v.VehicleCategory, VehicleCategory.C)
                                   .Create();
 
-            VehicleEntranceResultModel result = _controller.VehicleEntrance(vehicle);
+            VehicleEntranceResultModel result = _registerService.VehicleEntrance(vehicle);
 
             Assert.IsFalse(result.IsSuccessful);
         }

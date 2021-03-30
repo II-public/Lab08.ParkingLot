@@ -8,6 +8,7 @@
     <ProjectReference Include="..\Lab08.ParkingLot.DTO\Lab08.ParkingLot.DTO.csproj" />
     <ProjectReference Include="..\Lab08.ParkingLot.Enums\Lab08.ParkingLot.Enums.csproj" />
     <ProjectReference Include="..\Lab08.ParkingLot.Extensions\Lab08.ParkingLot.Extensions.csproj" />
+    <ProjectReference Include="..\Lab08.ParkingLot.Model\Lab08.ParkingLot.Model.csproj" />
     <ProjectReference Include="..\Lab08.ParkingLot.Service\Lab08.ParkingLot.Service.csproj" />
   </ItemGroup>
 

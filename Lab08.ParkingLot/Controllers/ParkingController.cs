@@ -1,4 +1,6 @@
-﻿using Lab08.ParkingLot.Service.Interfaces;
+﻿using Lab08.ParkingLot.DTO;
+using Lab08.ParkingLot.Model;
+using Lab08.ParkingLot.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Lab08.ParkingLot.Controllers
@@ -27,9 +29,10 @@ namespace Lab08.ParkingLot.Controllers
 
         [HttpGet]
         [Route(nameof(VehicleEntrance))]
-        public IActionResult VehicleEntrance()
+        public VehicleEntranceResultModel VehicleEntrance(RegisterVehicleDTO registerVehicleDTO)
         {
-            return Ok();
+            VehicleEntranceResultModel result = _registerService.VehicleEntrance(registerVehicleDTO);
+            return result;
         }
 
         [HttpGet]

@@ -3,5 +3,7 @@
     public interface ILab08ParkingLotUnitOfWork
     {
         IVehicleRepository VehicleRepository { get; }
+
+        void Save();
     }
 }

@@ -1,10 +1,13 @@
-﻿namespace Lab08.ParkingLot.Service.Interfaces
+﻿using Lab08.ParkingLot.DTO;
+using Lab08.ParkingLot.Model;
+
+namespace Lab08.ParkingLot.Service.Interfaces
 {
     public interface IRegisterService
     {
         int GetFreeSpaces();
 
-        bool VehicleEntrance();
+        VehicleEntranceResultModel VehicleEntrance(RegisterVehicleDTO registerVehicleDTO);
 
         bool VehicleExit();
     }

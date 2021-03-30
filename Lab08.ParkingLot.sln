@@ -22,7 +22,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08.ParkingLot.Repository
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08.ParkingLot.Service", "Lab08.ParkingLot.Service\Lab08.ParkingLot.Service.csproj", "{1438ECBC-697A-458B-876E-86B6E3EEF558}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08.ParkingLot.Tests", "Lab08.ParkingLot.Tests\Lab08.ParkingLot.Tests.csproj", "{361C0832-D39B-408A-9946-E0A05C909551}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab08.ParkingLot.Tests", "Lab08.ParkingLot.Tests\Lab08.ParkingLot.Tests.csproj", "{361C0832-D39B-408A-9946-E0A05C909551}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab08.ParkingLot.Model", "Lab08.ParkingLot.Model\Lab08.ParkingLot.Model.csproj", "{D549A554-45F6-4E6A-9A3D-3318077F77D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{361C0832-D39B-408A-9946-E0A05C909551}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{361C0832-D39B-408A-9946-E0A05C909551}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{361C0832-D39B-408A-9946-E0A05C909551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D549A554-45F6-4E6A-9A3D-3318077F77D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D549A554-45F6-4E6A-9A3D-3318077F77D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D549A554-45F6-4E6A-9A3D-3318077F77D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D549A554-45F6-4E6A-9A3D-3318077F77D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

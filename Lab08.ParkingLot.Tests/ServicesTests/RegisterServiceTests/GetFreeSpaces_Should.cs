@@ -13,12 +13,16 @@ namespace Lab08.ParkingLot.Tests.ServicesTests.RegisterServiceTests
     {
         private Mock<ILab08ParkingLotUnitOfWork> _lab08ParkingLotUnitOfWork;
         private IRegisterService _registerService;
+        private Mock<IVehicleRatesService> _vehicleRatesService;
+        private ICalculatorService _calculatorService;
 
         [SetUp]
         public void Setup()
         {
             _lab08ParkingLotUnitOfWork = new Mock<ILab08ParkingLotUnitOfWork>();
-            _registerService = new RegisterService(_lab08ParkingLotUnitOfWork.Object);
+            _vehicleRatesService = new Mock<IVehicleRatesService>();
+            _calculatorService = new CalculatorService(_lab08ParkingLotUnitOfWork.Object, _vehicleRatesService.Object);
+            _registerService = new RegisterService(_lab08ParkingLotUnitOfWork.Object, _calculatorService);
         }
 
         [Test]

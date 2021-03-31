@@ -23,9 +23,9 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
         {
             _lab08ParkingLotUnitOfWork = new Mock<ILab08ParkingLotUnitOfWork>();
             _vehicleRatesService = new Mock<IVehicleRatesService>();
-
-            _registerService = new RegisterService(_lab08ParkingLotUnitOfWork.Object);
             _calculatorService = new CalculatorService(_lab08ParkingLotUnitOfWork.Object, _vehicleRatesService.Object);
+            _registerService = new RegisterService(_lab08ParkingLotUnitOfWork.Object, _calculatorService);
+
 
             _controller = new ParkingController(_registerService, _calculatorService);
         }

@@ -10,10 +10,14 @@ namespace Lab08.ParkingLot.Service
     public class RegisterService : IRegisterService
     {
         private readonly ILab08ParkingLotUnitOfWork _lab08ParkingLotUnitOfWork;
+        private readonly ICalculatorService _calculatorService;
 
-        public RegisterService(ILab08ParkingLotUnitOfWork lab08ParkingLotUnitOfWork)
+        public RegisterService(
+            ILab08ParkingLotUnitOfWork lab08ParkingLotUnitOfWork,
+            ICalculatorService calculatorService)
         {
             _lab08ParkingLotUnitOfWork = lab08ParkingLotUnitOfWork;
+            _calculatorService = calculatorService;
         }
 
         public int GetFreeSpaces()
@@ -66,9 +70,32 @@ namespace Lab08.ParkingLot.Service
             };
         }
 
-        public bool VehicleExit()
+        public VehicleExitResultModel VehicleExit(ExitVehicleDTO exitVehicleDTO)
         {
-            throw new System.NotImplementedException();
+            Vehicle vehicle = _lab08ParkingLotUnitOfWork.VehicleRepository.GetAll().FirstOrDefault(v => v.Number == exitVehicleDTO.VehicleNumber);
+
+            if (vehicle == null)
+            {
+                return new VehicleExitResultModel()
+                {
+                    IsSuccessful = false,
+                    Message = $"Vehicle {exitVehicleDTO.VehicleNumber} cant be found in the parking lot!",
+                    Fee = 0
+                };
+            }
+
+            double calculatedFee = _calculatorService.CalculateFee(new VehicleFeeCalculationDTO()
+            {
+                VehicleNumber = vehicle.Number,
+                EntranceTime = exitVehicleDTO.ExitTime
+            }).Fee;
+
+            return new VehicleExitResultModel()
+            {
+                IsSuccessful = true,
+                Message = $"Vehicle {exitVehicleDTO.VehicleNumber} can now leave the parking lot.",
+                Fee = calculatedFee
+            };
         }
     }
 }

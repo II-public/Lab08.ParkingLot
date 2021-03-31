@@ -42,9 +42,10 @@ namespace Lab08.ParkingLot.Controllers
 
         [HttpGet]
         [Route(nameof(VehicleExit))]
-        public IActionResult VehicleExit()
+        public VehicleExitResultModel VehicleExit(ExitVehicleDTO exitVehicleDTO)
         {
-            return Ok();
+            VehicleExitResultModel result = _registerService.VehicleExit(exitVehicleDTO);
+            return result;
         }
     }
 }

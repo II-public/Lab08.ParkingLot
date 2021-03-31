@@ -9,6 +9,6 @@ namespace Lab08.ParkingLot.Service.Interfaces
 
         VehicleEntranceResultModel VehicleEntrance(RegisterVehicleDTO registerVehicleDTO);
 
-        bool VehicleExit();
+        VehicleExitResultModel VehicleExit(ExitVehicleDTO exitVehicleDTO);
     }
 }

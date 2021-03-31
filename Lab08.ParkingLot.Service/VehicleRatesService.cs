@@ -47,5 +47,32 @@ namespace Lab08.ParkingLot.Service
                     }
             }
         }
+
+        public int GetDiscountByDiscountCardType(DiscountCard discountCard)
+        {
+            switch (discountCard)
+            {
+                case DiscountCard.Silver:
+                    {
+                        return 10;
+                    }
+
+                case DiscountCard.Gold:
+                    {
+                        return 15;
+                    }
+
+                case DiscountCard.Platinum:
+                    {
+                        return 20;
+                    }
+
+                case DiscountCard.None:
+                default:
+                    {
+                        return 0;
+                    }
+            }
+        }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class VehicleCalculationResultModel
     {
-        public int Fee { get; set; }
+        public double Fee { get; set; }
 
         public string Message { get; set; }
     }

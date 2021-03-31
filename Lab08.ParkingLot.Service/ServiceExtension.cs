@@ -1,7 +1,6 @@
 ﻿using Lab08.ParkingLot.Data.Context;
 using Lab08.ParkingLot.Repository;
 using Lab08.ParkingLot.Repository.Interfaces;
-using Lab08.ParkingLot.Service.Calculators;
 using Lab08.ParkingLot.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,7 +27,6 @@ namespace Lab08.ParkingLot.Service
 
         public static void ConfigureServices(this IServiceCollection services)
         {
-            services.AddTransient<ICalculatorFactory, CalculatorFactory>();
             services.AddTransient<IRegisterService, RegisterService>();
             services.AddTransient<IVehicleRatesService, VehicleRatesService>();
         }

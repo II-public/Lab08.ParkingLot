@@ -92,33 +92,151 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
         }
 
         [Test]
-        public void TheCorrectNumber_When_TheParkingIsCatBAndNoDiscountCard()
+        [TestCase(14, 60)]
+        [TestCase(19, 88)]
+        [TestCase(23, 104)]
+        public void TheCorrectNumber_When_TheParkingIsCatBAndNoDiscountCard(int endHour, int fee)
         {
-            Assert.Pass();
+            var vehicles = new List<Vehicle>
+            {
+                new Vehicle()
+                {
+                    Number = "1234",
+                    EntryTime = new DateTime(2021, 3, 30, 2, 15, 0),
+                    VehicleCategory = VehicleCategory.B
+                }
+            };
+
+            _lab08ParkingLotUnitOfWork.Setup(r => r.VehicleRepository.GetAll()).Returns(vehicles.AsQueryable());
+
+            var vehicleCalc = new VehicleFeeCalculationDTO()
+            {
+                VehicleNumber = "1234",
+                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+            };
+
+            VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
+
+            Assert.AreEqual(fee, result.Fee);
         }
 
         [Test]
-        public void TheCorrectNumber_When_TheParkingIsCatCAndNoDiscountCard()
+        [TestCase(14, 120)]
+        [TestCase(19, 176)]
+        [TestCase(23, 208)]
+        public void TheCorrectNumber_When_TheParkingIsCatCAndNoDiscountCard(int endHour, int fee)
         {
-            Assert.Pass();
+            var vehicles = new List<Vehicle>
+            {
+                new Vehicle()
+                {
+                    Number = "1234",
+                    EntryTime = new DateTime(2021, 3, 30, 2, 15, 0),
+                    VehicleCategory = VehicleCategory.C
+                }
+            };
+
+            _lab08ParkingLotUnitOfWork.Setup(r => r.VehicleRepository.GetAll()).Returns(vehicles.AsQueryable());
+
+            var vehicleCalc = new VehicleFeeCalculationDTO()
+            {
+                VehicleNumber = "1234",
+                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+            };
+
+            VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
+
+            Assert.AreEqual(fee, result.Fee);
         }
 
         [Test]
-        public void TheCorrectNumber_When_TheParkingIsCatAAndThereIsDiscountCard()
+        [TestCase(14, 24)]
+        [TestCase(19, 35.20)]
+        [TestCase(23, 41.60)]
+        public void TheCorrectNumber_When_TheParkingIsCatAAndThereIsDiscountCard(int endHour, double fee)
         {
-            Assert.Pass();
+            var vehicles = new List<Vehicle>
+            {
+                new Vehicle()
+                {
+                    Number = "1234",
+                    EntryTime = new DateTime(2021, 3, 30, 2, 15, 0),
+                    DiscountCard = DiscountCard.Platinum,
+                    VehicleCategory = VehicleCategory.A
+                }
+            };
+
+            _lab08ParkingLotUnitOfWork.Setup(r => r.VehicleRepository.GetAll()).Returns(vehicles.AsQueryable());
+
+            var vehicleCalc = new VehicleFeeCalculationDTO()
+            {
+                VehicleNumber = "1234",
+                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+            };
+
+            VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
+
+            Assert.AreEqual(fee, result.Fee);
         }
 
         [Test]
-        public void TheCorrectNumber_When_TheParkingIsCatBAndThereIsDiscountCard()
+        [TestCase(14, 51)]
+        [TestCase(19, 74.80)]
+        [TestCase(23, 88.40)]
+        public void TheCorrectNumber_When_TheParkingIsCatBAndThereIsDiscountCard(int endHour, double fee)
         {
-            Assert.Pass();
+            var vehicles = new List<Vehicle>
+            {
+                new Vehicle()
+                {
+                    Number = "1234",
+                    EntryTime = new DateTime(2021, 3, 30, 2, 15, 0),
+                    DiscountCard = DiscountCard.Gold,
+                    VehicleCategory = VehicleCategory.B
+                }
+            };
+
+            _lab08ParkingLotUnitOfWork.Setup(r => r.VehicleRepository.GetAll()).Returns(vehicles.AsQueryable());
+
+            var vehicleCalc = new VehicleFeeCalculationDTO()
+            {
+                VehicleNumber = "1234",
+                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+            };
+
+            VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
+
+            Assert.AreEqual(fee, result.Fee);
         }
 
         [Test]
-        public void TheCorrectNumber_When_TheParkingIsCatCAndThereIsDiscountCard()
+        [TestCase(14, 108)]
+        [TestCase(19, 158.40)]
+        [TestCase(23, 187.20)]
+        public void TheCorrectNumber_When_TheParkingIsCatCAndThereIsDiscountCard(int endHour, double fee)
         {
-            Assert.Pass();
+            var vehicles = new List<Vehicle>
+            {
+                new Vehicle()
+                {
+                    Number = "1234",
+                    EntryTime = new DateTime(2021, 3, 30, 2, 15, 0),
+                    DiscountCard = DiscountCard.Silver,
+                    VehicleCategory = VehicleCategory.C
+                }
+            };
+
+            _lab08ParkingLotUnitOfWork.Setup(r => r.VehicleRepository.GetAll()).Returns(vehicles.AsQueryable());
+
+            var vehicleCalc = new VehicleFeeCalculationDTO()
+            {
+                VehicleNumber = "1234",
+                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+            };
+
+            VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
+
+            Assert.AreEqual(fee, result.Fee);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Linq;
 using Lab08.ParkingLot.Data.DataBase;
 using Lab08.ParkingLot.DTO;
+using Lab08.ParkingLot.Enums;
 using Lab08.ParkingLot.Model;
 using Lab08.ParkingLot.Repository.Interfaces;
 using Lab08.ParkingLot.Service.Interfaces;
@@ -57,7 +58,7 @@ namespace Lab08.ParkingLot.Service
 
             return new VehicleCalculationResultModel()
             {
-                Fee = result,
+                Fee = ApplyDiscount(result, vehicle.DiscountCard),
                 Message = "Vehicle fee calculated."
             }; ;
         }
@@ -88,6 +89,15 @@ namespace Lab08.ParkingLot.Service
 
 
             return result;
+        }
+
+        private double ApplyDiscount(int calculatedFee, DiscountCard discountCard)
+        {
+            int percentageDiscount = _vehicleRatesService.GetDiscountByDiscountCardType(discountCard);
+
+            double calculatedFeeWithDiscount = calculatedFee - (calculatedFee * percentageDiscount) / (double)100;
+
+            return Math.Truncate(calculatedFeeWithDiscount * 100) / 100;
         }
     }
 }

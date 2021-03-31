@@ -28,7 +28,8 @@ namespace Lab08.ParkingLot.Tests.ServicesTests.VehicleRatesServiceTests
 
             VehicleRatesModel actualResult = _vehicleRatesService.GetRatesByVehicleCategory(vehicleCategory);
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult.DayLightRates, actualResult.DayLightRates);
+            Assert.AreEqual(expectedResult.NightlyRates, actualResult.NightlyRates);
         }
 
         [Test]
@@ -43,7 +44,8 @@ namespace Lab08.ParkingLot.Tests.ServicesTests.VehicleRatesServiceTests
 
             VehicleRatesModel actualResult = _vehicleRatesService.GetRatesByVehicleCategory(vehicleCategory);
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult.DayLightRates, actualResult.DayLightRates);
+            Assert.AreEqual(expectedResult.NightlyRates, actualResult.NightlyRates);
         }
 
         [Test]
@@ -58,7 +60,8 @@ namespace Lab08.ParkingLot.Tests.ServicesTests.VehicleRatesServiceTests
 
             VehicleRatesModel actualResult = _vehicleRatesService.GetRatesByVehicleCategory(vehicleCategory);
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual(expectedResult.DayLightRates, actualResult.DayLightRates);
+            Assert.AreEqual(expectedResult.NightlyRates, actualResult.NightlyRates);
         }
     }
 }

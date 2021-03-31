@@ -6,6 +6,6 @@ namespace Lab08.ParkingLot.DTO
     {
         public string VehicleNumber { get; set; }
 
-        public DateTime EntranceTime { get; set; }
+        public DateTime CheckTime { get; set; }
     }
 }

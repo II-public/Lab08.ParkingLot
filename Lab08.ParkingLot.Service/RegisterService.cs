@@ -87,7 +87,7 @@ namespace Lab08.ParkingLot.Service
             double calculatedFee = _calculatorService.CalculateFee(new VehicleFeeCalculationDTO()
             {
                 VehicleNumber = vehicle.Number,
-                EntranceTime = exitVehicleDTO.ExitTime
+                CheckTime = exitVehicleDTO.ExitTime
             }).Fee;
 
             return new VehicleExitResultModel()

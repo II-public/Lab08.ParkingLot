@@ -54,7 +54,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
             var vehicleCalc = new VehicleFeeCalculationDTO()
             {
                 VehicleNumber = "1234",
-                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+                CheckTime = new DateTime(2021, 3, 30, endHour, 15, 0),
             };
 
             VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
@@ -83,7 +83,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
             var vehicleCalc = new VehicleFeeCalculationDTO()
             {
                 VehicleNumber = "1234",
-                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+                CheckTime = new DateTime(2021, 3, 30, endHour, 15, 0),
             };
 
             VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
@@ -112,7 +112,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
             var vehicleCalc = new VehicleFeeCalculationDTO()
             {
                 VehicleNumber = "1234",
-                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+                CheckTime = new DateTime(2021, 3, 30, endHour, 15, 0),
             };
 
             VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
@@ -141,7 +141,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
             var vehicleCalc = new VehicleFeeCalculationDTO()
             {
                 VehicleNumber = "1234",
-                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+                CheckTime = new DateTime(2021, 3, 30, endHour, 15, 0),
             };
 
             VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
@@ -171,7 +171,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
             var vehicleCalc = new VehicleFeeCalculationDTO()
             {
                 VehicleNumber = "1234",
-                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+                CheckTime = new DateTime(2021, 3, 30, endHour, 15, 0),
             };
 
             VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
@@ -201,7 +201,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
             var vehicleCalc = new VehicleFeeCalculationDTO()
             {
                 VehicleNumber = "1234",
-                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+                CheckTime = new DateTime(2021, 3, 30, endHour, 15, 0),
             };
 
             VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);
@@ -231,7 +231,7 @@ namespace Lab08.ParkingLot.Tests.ControllerTests.ParkingControllerTests
             var vehicleCalc = new VehicleFeeCalculationDTO()
             {
                 VehicleNumber = "1234",
-                EntranceTime = new DateTime(2021, 3, 30, endHour, 15, 0),
+                CheckTime = new DateTime(2021, 3, 30, endHour, 15, 0),
             };
 
             VehicleCalculationResultModel result = _controller.CalculateStayFee(vehicleCalc);

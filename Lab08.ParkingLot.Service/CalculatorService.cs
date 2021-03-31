@@ -40,20 +40,20 @@ namespace Lab08.ParkingLot.Service
 
             int result = 0;
 
-            double totalDays = (vehicleFeeCalculationDTO.EntranceTime - vehicle.EntryTime).TotalDays;
+            double totalDays = (vehicleFeeCalculationDTO.CheckTime - vehicle.EntryTime).TotalDays;
             int wholeDays = (int)Math.Truncate(totalDays);
 
             if (wholeDays > 0)
             {
                 result = wholeDays * 12 * rates.DayLightRates + wholeDays * 12 * rates.NightlyRates;
 
-                DateTime reminder = vehicleFeeCalculationDTO.EntranceTime.AddDays(wholeDays);
+                DateTime reminder = vehicleFeeCalculationDTO.CheckTime.AddDays(wholeDays);
 
-                result = result + CalculateReminder(reminder, vehicleFeeCalculationDTO.EntranceTime, rates);
+                result = result + CalculateWhenStayTimeIsLessThanADay(reminder, vehicleFeeCalculationDTO.CheckTime, rates);
             }
             else
             {
-                result = CalculateReminder(vehicle.EntryTime, vehicleFeeCalculationDTO.EntranceTime, rates);
+                result = CalculateWhenStayTimeIsLessThanADay(vehicle.EntryTime, vehicleFeeCalculationDTO.CheckTime, rates);
             }
 
             return new VehicleCalculationResultModel()
@@ -63,7 +63,7 @@ namespace Lab08.ParkingLot.Service
             }; ;
         }
 
-        private int CalculateReminder(DateTime startDate, DateTime endDate, VehicleRatesModel rates)
+        private int CalculateWhenStayTimeIsLessThanADay(DateTime startDate, DateTime endDate, VehicleRatesModel rates)
         {
             int result = 0;
             var daylyRatesStart = new DateTime(endDate.Year, endDate.Month, endDate.Day, 8, 0, 0);

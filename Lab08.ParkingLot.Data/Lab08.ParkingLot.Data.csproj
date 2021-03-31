@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lab08.ParkingLot.Enums\Lab08.ParkingLot.Enums.csproj" />
-    <ProjectReference Include="..\Lab08.ParkingLot.Extensions\Lab08.ParkingLot.Extensions.csproj" />
   </ItemGroup>
 
 </Project>
